@@ -12,16 +12,31 @@
 
     Пользователь: Что делаешь?
     Программа: Программирую
-    
+
 """
 
-questions_and_answers = {}
+questions_and_answers = {
+    "Как дела": "Хорошо!",
+    "Что делаешь?": "Программирую",
+    "Какая любимая игра?": "Minecraft",
+    "Какое любимое животное?": "Собака",
+    "Какая любимая машина?": "Tesla",
+    "Какая любимая суперсила?": "Телепортация",
+}
+
 
 def ask_user(answers_dict):
     """
     Замените pass на ваш код
     """
-    pass
-    
+    while True:
+        question = input("Введите вопрос: ")
+        if question in answers_dict:
+            answer = questions_and_answers[question]
+            print(answer)
+        else:
+            print("Извините, я не знаю ответа на этот вопрос.")
+
+
 if __name__ == "__main__":
     ask_user(questions_and_answers)
